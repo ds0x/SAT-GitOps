@@ -1,0 +1,9 @@
+- name: macOS - Running macOS 26.6 or later
+  query: SELECT 1 FROM os_version WHERE version_compare(version, '26.6') >= 0;
+  critical: true
+  description: This Mac is running a macOS version older than 26.6, the minimum required for Workstations. Fleet enforces the update with a deadline of December 2, 2026, using the Mac's escrowed bootstrap token so the update can install without an administrator password.
+  resolution: |
+    Update to macOS 26.6 or later from Software Update ( > System Settings > General > Software Update) and restart when prompted.
+
+    If you don't update by December 2, 2026, your Mac will install the update and restart automatically. Save your work before then.
+  platform: darwin

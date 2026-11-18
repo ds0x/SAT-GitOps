@@ -1,0 +1,5 @@
+- name: macOS 27+ virtual machines
+  description: macOS virtual machines (Apple Virtualization, Parallels, VMware) running macOS 27 or later
+  query: SELECT 1 FROM os_version, system_info WHERE os_version.major >= 27 AND (system_info.hardware_model LIKE 'VirtualMac%' OR system_info.hardware_model LIKE 'VMware%' OR system_info.hardware_model LIKE 'Parallels%');
+  label_membership_type: dynamic
+  platform: darwin
